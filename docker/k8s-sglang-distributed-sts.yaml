@@ -38,7 +38,7 @@ spec:
           --enable-metrics \
           --expert-parallel-size 16
           --enable-torch-compile
-          --torch-compile-max-bs 16
+          --torch-compile-max-bs 8
         env:
         - name: POD_INDEX     # reflects the node-rank
           valueFrom:
