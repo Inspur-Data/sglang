@@ -47,6 +47,10 @@ spec:
           value: "3"
         - name: NCCL_DEBUG
           value: INFO
+        - name: GLOO_SOCKET_IFNAME
+          value: enp20s0np0
+        - name: NCCL_SOCKET_IFNAME
+          value: enp20s0np0
         resources:
           limits:
             nvidia.com/gpu: "8"
