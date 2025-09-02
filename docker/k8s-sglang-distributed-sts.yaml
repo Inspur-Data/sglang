@@ -37,6 +37,7 @@ spec:
           --port 8000 \
           --enable-metrics \
           --expert-parallel-size 16
+          --enable-torch-compile
         env:
         - name: POD_INDEX     # reflects the node-rank
           valueFrom:
