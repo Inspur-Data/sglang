@@ -43,6 +43,8 @@ spec:
             fieldRef:
               apiVersion: v1
               fieldPath: metadata.labels['apps.kubernetes.io/pod-index']
+        - name: NCCL_IB_GID_INDEX
+          value: "3"
         - name: NCCL_DEBUG
           value: INFO
         resources:
