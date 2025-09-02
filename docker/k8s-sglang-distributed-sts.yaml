@@ -28,6 +28,7 @@ spec:
         - |
           python3 -m sglang.launch_server \
           --model /llm-folder \
+          --mem-fraction-static  0.93 \
           --dist-init-addr sglang-master-pod:5000 \
           --tensor-parallel-size 16 \
           --nnodes 8 \
@@ -36,11 +37,13 @@ spec:
           --host 0.0.0.0 \
           --port 8000 \
           --enable-metrics \
-          --expert-parallel-size 16
-          --enable-torch-compile
-          --torch-compile-max-bs 8
-          --enable-dp-attention
-          --enable-flashinfer-mla
+          --expert-parallel-size 16 \
+          --enable-torch-compile \
+          --torch-compile-max-bs 8 \
+          --enable-dp-attention \
+          --enable-flashinfer-mla \
+          --max-running-requests 20 \
+          --tp 16
         env:
         - name: POD_INDEX     # reflects the node-rank
           valueFrom:
