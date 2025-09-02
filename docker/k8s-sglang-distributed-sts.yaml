@@ -71,7 +71,7 @@ spec:
       volumes:
       - emptyDir:
           medium: Memory
-          sizeLimit: 10Gi
+          sizeLimit: 30Gi
         name: dshm
       - hostPath:
           path: /llm-folder # replace with PVC or hostPath with your model weights
