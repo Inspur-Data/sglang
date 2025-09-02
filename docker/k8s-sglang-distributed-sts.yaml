@@ -40,6 +40,7 @@ spec:
           --enable-torch-compile
           --torch-compile-max-bs 8
           --enable-dp-attention
+          --enable-flashinfer-mla
         env:
         - name: POD_INDEX     # reflects the node-rank
           valueFrom:
