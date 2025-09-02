@@ -30,14 +30,14 @@ spec:
           --model /llm-folder \
           --mem-fraction-static  0.93 \
           --dist-init-addr sglang-master-pod:5000 \
-          --tensor-parallel-size 16 \
+          --tensor-parallel-size 8 \
           --nnodes 8 \
           --node-rank $POD_INDEX \
           --trust-remote-code \
           --host 0.0.0.0 \
           --port 8000 \
           --enable-metrics \
-          --expert-parallel-size 16 \
+          --expert-parallel-size 8 \
           --enable-torch-compile \
           --enable-dp-attention \
           --enable-flashinfer-mla \
