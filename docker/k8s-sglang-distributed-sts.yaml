@@ -5,7 +5,7 @@ kind: StatefulSet
 metadata:
   name: distributed-sglang
 spec:
-  replicas: 2   # number of nodes/pods to run distributed sglang
+  replicas: 8   # number of nodes/pods to run distributed sglang
   selector:
     matchLabels:
       app: distributed-sglang
@@ -30,7 +30,7 @@ spec:
           --model /llm-folder \
           --dist-init-addr sglang-master-pod:5000 \
           --tensor-parallel-size 16 \
-          --nnodes 2 \
+          --nnodes 8 \
           --node-rank $POD_INDEX \
           --trust-remote-code \
           --host 0.0.0.0 \
