@@ -41,7 +41,8 @@ spec:
           --enable-torch-compile \
           --enable-dp-attention \
           --enable-flashinfer-mla \
-          --max-running-requests 256 
+          --max-running-requests 256 \
+          --moe-dense-tp-size 4\ #for混合专家dense+expert
         env:
         - name: POD_INDEX     # reflects the node-rank
           valueFrom:
